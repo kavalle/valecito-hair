@@ -1,0 +1,11 @@
+
+<h1>Lista de reservas</h1>
+{% for res in reservas %}
+  <section>
+    <div>Nombre: {{ res.nombre_completo }}</div>
+    <div>Correo electrónico: {{ res.correo }}</div>
+    <div>Teléfono: {{ res.telefono }}</div>
+    <div>Servicio: {{ res.servicio }}</div>
+    <div>Hora atención: {{ res.hora }}</div>
+  </section>
+{% endfor %}
