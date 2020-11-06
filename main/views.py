@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Reserva
 
@@ -30,6 +30,6 @@ def valid(request):
             hora = hora
         )
         nueva_reserva.save()
-
         return render(request, "reservar.html", { "exito": TRUE })
-    return HttpResponse("NO")
+
+    return HttpResponse("Error")
