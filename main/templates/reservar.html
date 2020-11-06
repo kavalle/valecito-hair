@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../assets/icons/style.css">
-  <link rel="stylesheet" href="../styles/template.css">
-  <link rel="stylesheet" href="../styles/reservation.css">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'img/icons/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/template.css' %}">
+  <link rel="stylesheet" href="{% static 'css/reservation.css' %}">
   <title>Reservar una hora</title>
 </head>
 <body>
@@ -13,9 +14,9 @@
     
     <header class="header">
       <div class="wrapper">
-        <img src="../assets/images/logo.png" class="logo" />
+        <img src="{% static 'img/images/logo.png' %}" class="logo" />
         <nav class="menu">
-          <a class="menu-link" href="index.html">Volver a inicio</a>
+          <a class="menu-link" href="/">Volver a inicio</a>
         </nav>
       </div>
     </header>
@@ -74,7 +75,7 @@
     </section>
   </main>
 
-  <script type="application/javascript" src="../scripts/reservation.js"></script>
+  <script type="application/javascript" src="{% static 'js/reservation.js' %}"></script>
 
 </body>
 </html>
