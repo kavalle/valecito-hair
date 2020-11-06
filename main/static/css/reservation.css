@@ -9,7 +9,6 @@
 
 .success {
   grid-column: 4 / 10;
-  border: 1px solid red;
   border-radius: .3125rem;
   padding: 1rem;
   height: auto;
@@ -18,8 +17,6 @@
   display: flex;
   align-items: center;
   font-weight: var(--font-medium);
-  opacity: 0;
-  visibility: hidden;
   position: absolute;
   transition: 1s all ease;
 }

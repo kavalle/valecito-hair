@@ -31,7 +31,5 @@ def valid(request):
         )
         nueva_reserva.save()
 
-        print (nueva_reserva)
-
-        return HttpResponse(nombre + " - " + telefono +  " - " + correo + " - " + servicio + " - " + hora )    
+        return render(request, "reservar.html", { "exito": TRUE })
     return HttpResponse("NO")
