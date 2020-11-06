@@ -1,12 +1,70 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valecito Hair</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/listar.css' %}">
+  <link rel="stylesheet" href="{% static 'img/icons/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/template.css' %}">
+</head>
+<body>
+  <main class="main">
+    <header class="header">
+      <div class="wrapper">
+        <img src="{% static 'img/images/logo.png' %}" class="logo" />
+        <nav class="menu">
+          <a class="menu-link" href="/">Inicio</a>
+          <a class="menu-link" href="/">Quiénes somos</a>
+          <a class="menu-link" href="/">Clientes</a>
+          <a class="menu-link" href="/">Contacto</a>
+          <a class="menu-link" href="/reservar">Reservar</a>
+        </nav>
+        <button type="button" class="menu_mobile icon-menu" id="button_mobile_menu"></button>
+      </div>
+    </header>
 
-<h1>Lista de reservas</h1>
-{% for res in reservas %}
-<hr>
-  <section>
-    <div>Nombre: {{ res.nombre_completo }}</div>
-    <div>Correo electrónico: {{ res.correo }}</div>
-    <div>Teléfono: {{ res.telefono }}</div>
-    <div>Servicio: {{ res.servicio }}</div>
-    <div>Hora atención: {{ res.hora }}</div>
-  </section>
-{% endfor %}
+    <div class="overlay" id="overlay"></div>
+
+    <section class="mobile_aside mobile_aside--hide" id="mobile_aside">
+      <nav class="menu">
+        <a class="menu-link" href="/">Inicio</a>
+        <a class="menu-link" href="/">Quiénes somos</a>
+        <a class="menu-link" href="/">Clientes</a>
+        <a class="menu-link" href="/">Contacto</a>
+        <a class="menu-link" href="/reservar">Reservar</a>
+      </nav>
+    </section>
+    <h1 class="title">Lista de reservas</h1>
+    <div class="container">
+      {% for res in reservas %}
+        <article class="item">
+          <div class="item-label">
+            <span class="name">Nombre:</span>
+            {{ res.nombre_completo }}
+          </div>
+          <div class="item-label">
+            <span class="name">Correo electrónico:</span> 
+            {{ res.correo }}
+          </div>
+          <div class="item-label">
+            <span class="name">Teléfono:</span>
+            {{ res.telefono }}
+          </div>
+          <div class="item-label">
+            <span class="name">Servicio:</span>
+            {{ res.servicio }}
+          </div>
+          <div class="item-label">
+            <span class="name">Hora atención:</span> 
+            {{ res.hora }}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+
+<script type="application/javascript" src="{% static 'js/reservation.js' %}"></script>
+
+</body>
+</html>

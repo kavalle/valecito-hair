@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Reserva
 
@@ -30,8 +30,8 @@ def valid(request):
             hora = hora
         )
         nueva_reserva.save()
+        return redirect('/listar-reservas')
+        # print (nueva_reserva)
 
-        print (nueva_reserva)
-
-        return HttpResponse(nombre + " - " + telefono +  " - " + correo + " - " + servicio + " - " + hora )    
+        # return HttpResponse(nombre + " - " + telefono +  " - " + correo + " - " + servicio + " - " + hora )    
     return HttpResponse("NO")
