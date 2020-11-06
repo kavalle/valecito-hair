@@ -1,3 +1,5 @@
 .DS_Store
 __pycache__/
 *.py[cod]
+main/__pycache__/
+valecitohair/__pycache__/

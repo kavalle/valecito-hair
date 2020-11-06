@@ -7,4 +7,5 @@ urlpatterns = [
     path('', views.home, name='index'),
     path('reservar', views.reservation, name='reservar'),
     path('listar-reservas', views.list, name='listar'),
+    path('validar-reserva', views.valid, name='validar'),
 ]

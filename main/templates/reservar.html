@@ -26,28 +26,29 @@
         <span class="success-icon icon-check"></span>
         La hora fue reservada correctamente ¡te contactaremos pronto!
       </div>
-      <form class="reservation" id="reservation">
+      <form class="reservation" id="reservation" action="/validar-reserva" method="POST">
+        {% csrf_token %}
         <h2 class="reservation-title">Reserva una hora</h2>
         <p class="reservation-description">
           Por favor completa los datos a continuación para hacer tu reserva.
         </p>
         <div class="field">
           <label class="field-label">Nombre completo</label>
-          <input type="text" class="field-input" placeholder="Ej: Valentina Campos">
+          <input type="text" name="nombre" class="field-input" placeholder="Ej: Valentina Campos" required>
         </div>
         <div class="field">
           <label class="field-label">Correo electrónico</label>
-          <input type="text" class="field-input" placeholder="hola@dominio.com">
+          <input type="email" name="correo" class="field-input" placeholder="hola@dominio.com" required>
         </div>
         <div class="field">
           <label class="field-label">Teléfono</label>
-          <input type="text" class="field-input" placeholder="+56 9 12345678">
+          <input type="phone" name="telefono" class="field-input" placeholder="+56 9 12345678" required>
         </div>
         <section class="reservation-fields">
           <div class="field">
             <label class="field-label">Servicio</label>
-            <select class="field-select">
-              <option value="0" hidden selected>Seleccionar...</option>
+            <select class="field-select" required name="servicio">
+              <option value="" hidden selected disabled>Seleccionar...</option>
               <option value="corte">Corte</option>
               <option value="color_global">Color global</option>
               <option value="decoloracion_global">Decoloración global</option>
@@ -60,12 +61,12 @@
           </div>
           <div class="field">
             <label class="field-label">Seleccionar hora</label>
-            <select class="field-select">
-              <option value="0" hidden selected>Seleccionar...</option>
-              <option value="">22 de septiembre 15:40hrs</option>
-              <option value="">22 de septiembre 16:40hrs</option>
-              <option value="">23 de septiembre 14:00hrs</option>
-              <option value="">23 de septiembre 18:00hrs</option>
+            <select class="field-select" required name="hora">
+              <option value="" hidden selected disabled>Seleccionar...</option>
+              <option value="15:40">15:40hrs</option>
+              <option value="16:40">16:40hrs</option>
+              <option value="14:00">14:00hrs</option>
+              <option value="18:00">18:00hrs</option>
             </select>
           </div>
         </section>
