@@ -23,10 +23,12 @@
     </header>
 
     <section class="container">
-      <div class="success" id="success">
-        <span class="success-icon icon-check"></span>
-        La hora fue reservada correctamente ¡te contactaremos pronto!
-      </div>
+      {% if exito %}
+        <div class="success" id="success">
+          <span class="success-icon icon-check"></span>
+          La hora fue reservada correctamente ¡te contactaremos pronto!
+        </div>
+      {% endif %}
       <form class="reservation" id="reservation" action="/validar-reserva" method="POST">
         {% csrf_token %}
         <h2 class="reservation-title">Reserva una hora</h2>

@@ -8,7 +8,7 @@ def home(request):
     return render(request, "inicio.html")
 
 def reservation(request):
-    return render(request, "reservar.html")
+    return render(request, "reservar.html", { "exito": False })
 
 def list(request):
     return render(request, "listar.html", { "reservas": Reserva.objects.all() })
@@ -30,6 +30,5 @@ def valid(request):
             hora = hora
         )
         nueva_reserva.save()
-        return render(request, "reservar.html", { "exito": TRUE })
-
+        return render(request, "reservar.html", { "exito": True })
     return HttpResponse("Error")
