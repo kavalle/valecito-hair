@@ -4,17 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Valecito Hair</title>
-  <link rel="stylesheet" href="../assets/icons/style.css">
-  <link rel="stylesheet" href="../styles/template.css">
-  <link rel="stylesheet" href="../styles/home.css">
-  <link rel="stylesheet" href="../libraries/owlcarousel/assets/owl.carousel.min.css">
-  <link rel="stylesheet" href="../libraries/owlcarousel/assets/owl.theme.default.min.css">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  <link rel="stylesheet" href="{% static 'css/template.css' %}">
+  <link rel="stylesheet" href="{% static 'libraries/owlcarousel/assets/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'libraries/owlcarousel/assets/owl.theme.default.min.css' %}">
 </head>
 <body>
   <main class="main">
     <header class="header">
       <div class="wrapper">
-        <img src="../assets/images/logo.png" class="logo" />
+        <img src="{% static 'img/images/logo.png' %}" class="logo" />
         <nav class="menu">
           <a class="menu-link" href="#slide">Inicio</a>
           <a class="menu-link" href="#about">Quiénes somos</a>
@@ -50,7 +50,7 @@
 
     <section class="about_wrapper" id="about">
       <div class="about">
-        <img class="about-image" src="../assets/images/original/_dOLepYg.jpeg">
+        <img class="about-image" src="{% static 'img/images/original/_dOLepYg.jpeg' %}">
         <h2 class="about-title">Quiénes somos</h2>
         <p class="about-text">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium mollitia esse voluptatem sequi quod eligendi quibusdam, reprehenderit illo a dolorum ex doloremque omnis facere optio error. Porro consequuntur atque nam! Magnam aliquid tempore officiis tempora culpa, quia cupiditate unde, quaerat id reprehenderit ex aspernatur optio quod hic, animi distinctio dolorem?
@@ -70,18 +70,18 @@
     <section class="gallery" id="gallery">
       <h2 class="gallery-title">Nuestros clientes</h2>
       <div class="owl-carousel">
-        <img src="../assets/images/gallery/1.jpg" class="item"/>
-        <img src="../assets/images/gallery/2.jpg" class="item"/>
-        <img src="../assets/images/gallery/3.jpg" class="item"/>
-        <img src="../assets/images/gallery/4.jpg" class="item"/>
-        <img src="../assets/images/gallery/5.jpg" class="item"/>
-        <img src="../assets/images/gallery/6.jpg" class="item"/>
-        <img src="../assets/images/gallery/7.jpg" class="item"/>
-        <img src="../assets/images/gallery/8.jpg" class="item"/>
-        <img src="../assets/images/gallery/9.jpg" class="item"/>
-        <img src="../assets/images/gallery/10.jpg" class="item"/>
-        <img src="../assets/images/gallery/11.jpg" class="item"/>
-        <img src="../assets/images/gallery/12.jpg" class="item"/>
+        <img src="{% static 'img/images/gallery/1.jpg' %}" class="item"/>
+        <img src="{% static 'img/images/gallery/2.jpg' %}" class="item"/>
+        <img src="{% static 'img/images/gallery/3.jpg' %}" class="item"/>
+        <img src="{% static 'img/images/gallery/4.jpg' %}" class="item"/>
+        <img src="{% static 'img/images/gallery/5.jpg' %}" class="item"/>
+        <img src="{% static 'img/images/gallery/6.jpg' %}" class="item"/>
+        <img src="{% static 'img/images/gallery/7.jpg' %}" class="item"/>
+        <img src="{% static 'img/images/gallery/8.jpg' %}" class="item"/>
+        <img src="{% static 'img/images/gallery/9.jpg' %}" class="item"/>
+        <img src="{% static 'img/images/gallery/10.jpg' %}" class="item"/>
+        <img src="{% static 'img/images/gallery/11.jpg' %}" class="item"/>
+        <img src="{% static 'img/images/gallery/12.jpg' %}" class="item"/>
         <div class="owl-dot"></div>
       </div>
     </section>
@@ -105,8 +105,8 @@
     </footer>
   </main>
 
-  <script src="../libraries/jquery.min.js"></script>
-  <script src="../libraries/owlcarousel/owl.carousel.min.js"></script>
-  <script src="../scripts/home.js"></script>
+  <script src="{% static 'libraries/jquery.min.js' %}"></script>
+  <script src="{% static 'libraries/owlcarousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/home.js' %}"></script>
 </body>
 </html>
