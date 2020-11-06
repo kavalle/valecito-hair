@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
-def homepage(request):
-    return HttpResponse("Care puta!")
+from valecitohair import views
+
+def home(request):
+    return render(request, "index.html")

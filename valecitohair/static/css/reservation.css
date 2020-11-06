@@ -1,0 +1,126 @@
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+  margin: 2rem auto;
+  min-height: 500px;
+}
+
+.success {
+  grid-column: 4 / 10;
+  border: 1px solid red;
+  border-radius: .3125rem;
+  padding: 1rem;
+  height: auto;
+  border: 2px solid var(--sky-color);
+  color: #5F5F5F;
+  display: flex;
+  align-items: center;
+  font-weight: var(--font-medium);
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  transition: 1s all ease;
+}
+
+.success-icon {
+  color: var(--pink-color);
+  font-size: 1.5rem;
+  margin-right: .5rem;
+}
+
+.success.success--open {
+  opacity: 1;
+  visibility: visible;
+  position: static;
+}
+
+.reservation {
+  grid-column: 4 / 10;
+}
+
+.reservation-title {
+  font-size: 22px;
+  margin-bottom: .3125rem;
+  font-weight: var(--font-bold);
+  color: var(--purple-color);
+}
+
+.reservation-description {
+  font-size: 16px;
+  color: grey;
+  margin-bottom: 1.5rem;
+}
+
+.reservation-fields {
+  display: flex;
+}
+
+.reservation-fields .field {
+  margin-right: 1rem;
+}
+
+.reservation-fields .field:last-child {
+  margin: 0;
+}
+
+.field {
+  width: 100%;
+  margin: 0 0 1rem 0;
+}
+
+.field-label {
+  display: block; 
+  margin-bottom: .3125rem;
+}
+
+.field-input {
+  width: 100%;
+  padding: .5rem;
+  border: 1px solid grey;
+  border-radius: .3125rem;
+}
+
+.field-select {
+  width: 100%;
+  padding: .5rem;
+  border: 1px solid grey;
+  border-radius: .3125rem;
+}
+
+.reservation-button {
+  width: 180px;
+  border-radius: 3rem;
+  background: var(--purple-color);
+  color: white;
+  font-size: 1rem;
+  padding: .6rem .5rem;
+  border: 0;
+  margin-top: 2rem;
+  transition: .5s all ease-out;
+  cursor: pointer;
+}
+
+.reservation-button:hover {
+  background: var(--dark-purple-color);
+}
+
+.reservation-button:disabled {
+  opacity: .5;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 640px) {
+  .success {
+    grid-column: 2 / 12;
+  }
+  .reservation {
+    grid-column: 2 / 12;
+  }
+  .header .menu {
+    display: block;
+  }
+ }
+ 
+ 

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/icons/style.css">
+  <link rel="stylesheet" href="../styles/template.css">
+  <link rel="stylesheet" href="../styles/reservation.css">
+  <title>Reservar una hora</title>
+</head>
+<body>
+  <main class="main">
+    
+    <header class="header">
+      <div class="wrapper">
+        <img src="../assets/images/logo.png" class="logo" />
+        <nav class="menu">
+          <a class="menu-link" href="index.html">Volver a inicio</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="container">
+      <div class="success" id="success">
+        <span class="success-icon icon-check"></span>
+        La hora fue reservada correctamente ¡te contactaremos pronto!
+      </div>
+      <form class="reservation" id="reservation">
+        <h2 class="reservation-title">Reserva una hora</h2>
+        <p class="reservation-description">
+          Por favor completa los datos a continuación para hacer tu reserva.
+        </p>
+        <div class="field">
+          <label class="field-label">Nombre completo</label>
+          <input type="text" class="field-input" placeholder="Ej: Valentina Campos">
+        </div>
+        <div class="field">
+          <label class="field-label">Correo electrónico</label>
+          <input type="text" class="field-input" placeholder="hola@dominio.com">
+        </div>
+        <div class="field">
+          <label class="field-label">Teléfono</label>
+          <input type="text" class="field-input" placeholder="+56 9 12345678">
+        </div>
+        <section class="reservation-fields">
+          <div class="field">
+            <label class="field-label">Servicio</label>
+            <select class="field-select">
+              <option value="0" hidden selected>Seleccionar...</option>
+              <option value="corte">Corte</option>
+              <option value="color_global">Color global</option>
+              <option value="decoloracion_global">Decoloración global</option>
+              <option value="bloque_color">Bloque color</option>
+              <option value="babylights">Babylights</option>
+              <option value="balayage">Balayage</option>
+              <option value="retoque">Retoque crecimiento/canas</option>
+              <option value="bano_color">Baño de color</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="field-label">Seleccionar hora</label>
+            <select class="field-select">
+              <option value="0" hidden selected>Seleccionar...</option>
+              <option value="">22 de septiembre 15:40hrs</option>
+              <option value="">22 de septiembre 16:40hrs</option>
+              <option value="">23 de septiembre 14:00hrs</option>
+              <option value="">23 de septiembre 18:00hrs</option>
+            </select>
+          </div>
+        </section>
+        <button type="submit" class="reservation-button" id="button">Reservar hora</button>
+      </form>
+    </section>
+    </section>
+  </main>
+
+  <script type="application/javascript" src="../scripts/reservation.js"></script>
+
+</body>
+</html>

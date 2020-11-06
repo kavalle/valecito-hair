@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import './reset.css';
+
+:root {
+  --font-stack: 'Montserrat', sans-serif;
+  --wrapper: 1200px;
+ --purple-color: #6F5FA6;
+ --dark-purple-color: #372B62;
+ --pink-color: #F4ADBD;
+ --sky-color: #8ACFDE;
+ --font-light: 300;
+ --font-regular: 400;
+ --font-medium: 500;
+ --font-semibold: 600;
+ --font-bold: 700;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px; 
+  padding: 90px 0 0 0;
+  margin: 0;
+  background: white;
+  font-family: var(--font-stack);
+}
+
+.header {
+  background: white;
+  margin: 0;
+  border-bottom: 1px solid #CCC;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+.header .wrapper {
+  max-width: var(--wrapper);
+  width: 90%;
+  margin: 0 auto;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 90px;
+  display: block;
+}
+
+.menu-link {
+  font-size: 1rem;
+  margin-right: 1rem;
+  color: var(--purple-color);
+  text-decoration: none;
+  font-weight: var(--font-semibold);
+}
+
+.menu-link:last-child {
+  margin: 0;
+}
+
+
+.menu_mobile {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  border: 0;
+  outline: none;
+  background: none;
+  display: none;
+}
+
+.overlay {
+  background: rgba(0,0,0,.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 11;
+  display: none;
+}
+
+.mobile_aside {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 80%;
+  height: 100vh;
+  background: white;
+  z-index: 12;
+  transition: .5s all ease;
+}
+
+.mobile_aside .menu {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.mobile_aside .menu-link {
+  display: block;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #ccc;
+  color: #333;
+  font-weight: var(--font-medium);
+}
+
+.mobile_aside.mobile_aside--hide {
+  transform: translateX(100%);
+}
+
+@media screen and (max-width: 640px) {
+ .menu_mobile {
+   display: block;
+ }
+ .menu {
+   display: none;
+ }
+}
+
