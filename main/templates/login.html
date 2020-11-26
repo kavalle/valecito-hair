@@ -14,6 +14,9 @@
   <form class="login" action="/validar-login" method="POST">
     {% csrf_token %}
     <h1 class="title">Iniciar sesión</h1>
+    {% if fallido %}
+      <span class="error">Usuario o contraseña invalida</span>
+    {% endif %}
     <label class="field" for="usuario">
       Usuario
       <input class="field input" type="text" name="usuario" id="usuario">
