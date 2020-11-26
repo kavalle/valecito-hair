@@ -2,7 +2,6 @@ const $form = document.getElementById('reservation');
 const $success = document.getElementById('success');
 const $button = document.getElementById('button');
 
-
 // $form.addEventListener('submit', function(eve) {
 //   // eve.preventDefault();
 //   // $button.disabled = true;

@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Reserva, Usuario
+from django.core import serializers
+
 
 from valecitohair import views
 
@@ -55,3 +57,12 @@ def valid(request):
         nueva_reserva.save()
         return render(request, "reservar.html", { "exito": True })
     return HttpResponse("Error")
+
+def lastReserva(request):
+
+    reservas = Reserva.objects.all()
+    print(reservas)
+    return HttpResponse(
+        serializers.serialize("json", reservas),
+        content_type="application/json"
+    )

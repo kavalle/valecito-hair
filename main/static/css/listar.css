@@ -32,6 +32,9 @@
   color: var(--purple-color);
   margin-right: .325rem;
 }
+.dolar {
+  text-align: center;
+}
 
 @media screen and (max-width: 640px) { 
   .container {

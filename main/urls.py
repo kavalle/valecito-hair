@@ -10,5 +10,6 @@ urlpatterns = [
     path('validar-reserva', views.valid, name='validar'),
     path('iniciar-sesion', views.login, name="login"),
     path('cerrar-sesion', views.logout, name="logout"),
-    path('validar-login', views.valid_login, name="validar-login")
+    path('validar-login', views.valid_login, name="validar-login"),
+    path('api/reservas', views.lastReserva, name="ultima")
 ]
