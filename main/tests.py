@@ -12,7 +12,7 @@ class BasicTest(TestCase):
       )
       nueva_reserva.save()
       record = Reserva.objects.get(id=1)
-      self.assertEqual(record)
+      self.assertEqual(record, 1)
 
   def test_error(self):
       nueva_reserva = Reserva(
@@ -24,4 +24,4 @@ class BasicTest(TestCase):
       )
       nueva_reserva.save()
       record = Reserva.objects.get(id=1)
-      self.assertEqual(record)
+      self.assertEqual(record != 2)

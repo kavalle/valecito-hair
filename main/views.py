@@ -13,6 +13,9 @@ def reservation(request):
 def list(request):
     return render(request, "listar.html", { "reservas": Reserva.objects.all() })
 
+def login(request):
+    return render(request, "login.html")
+
 def valid(request):
     print (request.method)
     if request.method == "POST":

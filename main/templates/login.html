@@ -4,17 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Iniciar sesión</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+  <link rel="stylesheet" href="{% static 'css/template.css' %}">
+  <link rel="stylesheet" href="{% static 'img/icons/style.css' %}">
 </head>
 <body>
   
   <form action="/iniciar-sesion" method="POST">
-    <label for="user">
+    <label for="usuario">
       Usuario
-      <input type="text" name="user" id="user">
+      <input type="text" name="usuario" id="usuario">
     </label>
-    <label for="password">
+    <label for="contrasena">
       Contraseña
-      <input type="password" name="password" id="password">
+      <input type="password" name="contrasena" id="contrasena">
     </label>
     <button  type="submit">Iniciar sesión</button>
     <hr />
