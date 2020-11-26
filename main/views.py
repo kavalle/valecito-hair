@@ -32,9 +32,9 @@ def valid_login(request):
         try:
             obj = Usuario.objects.get(usuario=usuario, contrasena=contrasena)
             request.session['usuario'] = obj.usuario
-            return HttpResponse("Correcto")  
+            return redirect("/listar-reservas")
         except Usuario.DoesNotExist:
-            return HttpResponse("Incorrecto") 
+            return render(request, "login.html", { "fallido": True }) 
 
 
 def valid(request):
