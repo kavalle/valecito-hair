@@ -8,5 +8,7 @@ urlpatterns = [
     path('reservar', views.reservation, name='reservar'),
     path('listar-reservas', views.list, name='listar'),
     path('validar-reserva', views.valid, name='validar'),
-    path('iniciar-sesion', views.login, name="login")
+    path('iniciar-sesion', views.login, name="login"),
+    path('cerrar-sesion', views.logout, name="logout"),
+    path('validar-login', views.valid_login, name="validar-login")
 ]

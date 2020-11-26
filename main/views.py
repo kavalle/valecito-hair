@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Reserva
+from .models import Reserva, Usuario
 
 from valecitohair import views
 
@@ -11,13 +11,33 @@ def reservation(request):
     return render(request, "reservar.html", { "exito": False })
 
 def list(request):
+    sess = request.session.get('usuario')
+    if sess == None:
+        return redirect('/iniciar-sesion')
     return render(request, "listar.html", { "reservas": Reserva.objects.all() })
+
+
+def logout(request):
+    del request.session['usuario']
+    return redirect("/")
 
 def login(request):
     return render(request, "login.html")
 
+def valid_login(request):
+    if request.method == "POST":
+        usuario = request.POST.get("usuario")
+        contrasena = request.POST.get("contrasena")
+
+        try:
+            obj = Usuario.objects.get(usuario=usuario, contrasena=contrasena)
+            request.session['usuario'] = obj.usuario
+            return HttpResponse("Correcto")  
+        except Usuario.DoesNotExist:
+            return HttpResponse("Incorrecto") 
+
+
 def valid(request):
-    print (request.method)
     if request.method == "POST":
         nombre = request.POST.get("nombre")
         telefono = request.POST.get("telefono")

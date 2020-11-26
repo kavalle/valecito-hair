@@ -10,8 +10,8 @@
   <link rel="stylesheet" href="{% static 'img/icons/style.css' %}">
 </head>
 <body>
-  
-  <form action="/iniciar-sesion" method="POST">
+  <form action="/validar-login" method="POST">
+    {% csrf_token %}
     <label for="usuario">
       Usuario
       <input type="text" name="usuario" id="usuario">
@@ -24,7 +24,6 @@
     <hr />
     <button type="button">Iniciar con Google</button>
   </form>
-
 
 </body>
 </html>
