@@ -4,16 +4,16 @@ Content-Transfer-Encoding: 8bit
 Subject: Password reset on localhost:8000
 From: webmaster@localhost
 To: kar.valle@alumnos.duoc.cl
-Date: Sat, 28 Nov 2020 05:08:57 -0000
+Date: Sat, 28 Nov 2020 05:52:53 -0000
 Message-ID: 
- <160654013732.54802.7971115994256848878@1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa>
+ <160654277316.57419.4961260775631307664@1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa>
 
 
 You're receiving this email because you requested a password reset for your user account at localhost:8000.
 
 Please go to the following page and choose a new password:
 
-http://localhost:8000/accounts/reset/MQ/ae17mx-2deba05f1b3965a2e23933cf6fd2b6ce/
+http://localhost:8000/accounts/reset/MQ/ae19o5-3670266dd2d078955d349694c49232b5/
 
 Your username, in case you’ve forgotten: admin-valecito
 
