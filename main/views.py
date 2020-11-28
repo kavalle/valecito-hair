@@ -6,6 +6,18 @@ from django.contrib.auth import authenticate
 
 from valecitohair import views
 
+#rest_framework
+
+from rest_framework import viewsets
+from .serializers import ReservasSerializer
+
+
+# consumo api
+
+from urllib.request import urlopen
+import json
+
+
 def home(request):
     return render(request, "inicio.html", { "logeado": request.user.is_authenticated})
 
@@ -14,7 +26,15 @@ def reservation(request):
 
 def list(request):
     if request.user.is_authenticated:
-        return render(request, "listar.html", { "reservas": Reserva.objects.all() })
+
+        # url="https://api.gael.cl/general/public/monedas/UTM"
+        # datos = urlopen(url).read()
+        # moneda = json.loads(datos)
+        # valor = moneda["Valor"]
+
+        valor = 11111
+
+        return render(request, "listar.html", { "reservas": Reserva.objects.all(), "valor_uf": valor })
     else:
         return redirect('/accounts/login/')
 
@@ -45,3 +65,7 @@ def lastReserva(request):
         serializers.serialize("json", reservas),
         content_type="application/json"
     )
+
+class AppViewSet(viewsets.ModelViewSet):
+    queryset= Reserva.objects.all()
+    serializer_class=ReservasSerializer

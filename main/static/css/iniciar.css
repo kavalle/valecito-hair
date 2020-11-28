@@ -66,6 +66,13 @@
   border: 1px solid #ccc;
   border-radius: 3rem;
   cursor: pointer;
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+
+.google img {
+  margin-right: .5rem;
 }
 
 .google .logo {
