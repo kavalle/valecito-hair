@@ -27,12 +27,12 @@ def reservation(request):
 def list(request):
     if request.user.is_authenticated:
 
-        # url="https://api.gael.cl/general/public/monedas/UTM"
-        # datos = urlopen(url).read()
-        # moneda = json.loads(datos)
-        # valor = moneda["Valor"]
+        url="https://api.gael.cl/general/public/monedas/UF"
+        datos = urlopen(url).read()
+        moneda = json.loads(datos)
+        valor = moneda["Valor"]
 
-        valor = 11111
+       
 
         return render(request, "listar.html", { "reservas": Reserva.objects.all(), "valor_uf": valor })
     else:
