@@ -7,7 +7,3 @@ class Reserva(models.Model):
     telefono = models.CharField(max_length=10)
     servicio = models.CharField(max_length=50)
     hora = models.TimeField()
-
-class Usuario(models.Model):
-    usuario= models.CharField(max_length=50)
-    contrasena= models.CharField(max_length=200)

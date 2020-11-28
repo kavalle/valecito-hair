@@ -11,26 +11,23 @@
 </head>
 <body>
   
-  <form class="login" action="/validar-login" method="POST">
+  <form class="login" method="POST">
     {% csrf_token %}
     <h1 class="title">Iniciar sesión</h1>
-    {% if fallido %}
-      <span class="error">Usuario o contraseña invalida</span>
-    {% endif %}
     <label class="field" for="usuario">
       Usuario
-      <input class="field input" type="text" name="usuario" id="usuario">
+      <input class="field input" type="text" name="username" id="usuario">
     </label>
     <label class="field" for="contrasena">
       Contraseña
-      <input class="field input" type="password" name="contrasena" id="contrasena">
+      <input class="field input" type="password" name="password" id="contrasena">
     </label>
     <button class="submit" type="submit">Iniciar sesión</button>
     <hr />
-    <button class="google" type="button">
-      <img src="{% static 'img/images/google.svg' %}" class="logo" />
-      Iniciar con Google
-    </button>
+    <a class="google" href="{% url 'social:begin' 'facebook' %}">
+      <img src="{% static 'img/images/fb.svg' %}" width="20px" />
+      Login con facebook
+    </a>
   </form>
 
 </body>

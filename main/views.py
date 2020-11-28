@@ -1,43 +1,22 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Reserva, Usuario
+from .models import Reserva
 from django.core import serializers
-
+from django.contrib.auth import authenticate
 
 from valecitohair import views
 
 def home(request):
-    return render(request, "inicio.html")
+    return render(request, "inicio.html", { "logeado": request.user.is_authenticated})
 
 def reservation(request):
     return render(request, "reservar.html", { "exito": False })
 
 def list(request):
-    sess = request.session.get('usuario')
-    if sess == None:
-        return redirect('/iniciar-sesion')
-    return render(request, "listar.html", { "reservas": Reserva.objects.all() })
-
-
-def logout(request):
-    del request.session['usuario']
-    return redirect("/")
-
-def login(request):
-    return render(request, "login.html")
-
-def valid_login(request):
-    if request.method == "POST":
-        usuario = request.POST.get("usuario")
-        contrasena = request.POST.get("contrasena")
-
-        try:
-            obj = Usuario.objects.get(usuario=usuario, contrasena=contrasena)
-            request.session['usuario'] = obj.usuario
-            return redirect("/listar-reservas")
-        except Usuario.DoesNotExist:
-            return render(request, "login.html", { "fallido": True }) 
-
+    if request.user.is_authenticated:
+        return render(request, "listar.html", { "reservas": Reserva.objects.all() })
+    else:
+        return redirect('/accounts/login/')
 
 def valid(request):
     if request.method == "POST":

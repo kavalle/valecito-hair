@@ -22,10 +22,17 @@
           <a class="menu-link" href="#gallery">Clientes</a>
           <a class="menu-link" href="#contact">Contacto</a>
           <a class="menu-link" href="/reservar">Reservar</a>
-          <a class="menu-link" href="/iniciar-sesion">
+          {% if not logeado %}
+          <a class="menu-link" href="/accounts/login">
             <span class="icon-user"></span>
             Iniciar sesión
-          </a>
+          </a>          
+          {% endif %}
+          {% if logeado %}
+          <a class="menu-link" href="/listar">
+            Listar Reservas
+          </a>          
+          {% endif %}
         </nav>
         <button type="button" class="menu_mobile icon-menu" id="button_mobile_menu"></button>
       </div>
@@ -40,10 +47,17 @@
         <a class="menu-link" href="#gallery">Clientes</a>
         <a class="menu-link" href="#contact">Contacto</a>
         <a class="menu-link" href="/reservar">Reservar</a>
-        <a class="menu-link" href="/iniciar-sesion">
+        {% if not logeado %}
+        <a class="menu-link" href="/accounts/login">
           <span class="icon-user"></span>
           Iniciar sesión
-        </a>
+        </a>          
+        {% endif %}
+        {% if logeado %}
+        <a class="menu-link" href="/listar">
+          Listar Reservas
+        </a>          
+        {% endif %}
       </nav>
     </section>
 
